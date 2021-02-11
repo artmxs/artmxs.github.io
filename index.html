@@ -6,60 +6,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&display=swap" rel="stylesheet">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/javascript">
-      $(document).ready(function() {
-            // Get media - with autoplay disabled (audio or video)
-            var media = $('video').not("[autoplay='autoplay']");
-            var tolerancePixel = 40;
-
-            function checkMedia(){
-                // Get current browser top and bottom
-                var scrollTop = $(window).scrollTop() + tolerancePixel;
-                var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
-
-                media.each(function(index, el) {
-                    var yTopMedia = $(this).offset().top;
-                    var yBottomMedia = $(this).height() + yTopMedia;
-
-                    if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
-                        $(this).get(0).play();
-                    } else {
-                        $(this).get(0).pause();
-                    }
-                });
-
-                //}
-            }
-            $(document).on('scroll', checkMedia);
-        });
-</script>
-<script type="text/javascript">
-        $(document).ready(function() {
-            // Get media - with autoplay disabled (audio or video)
-            var media = $('video').not("[autoplay='autoplay']");
-            var tolerancePixel = 40;
-
-            function checkMedia(){
-                // Get current browser top and bottom
-                var scrollTop = $(window).scrollTop() + tolerancePixel;
-                var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
-
-                media.each(function(index, el) {
-                    var yTopMedia = $(this).offset().top;
-                    var yBottomMedia = $(this).height() + yTopMedia;
-
-                    if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
-                        $(this).get(0).play();
-                    } else {
-                        $(this).get(0).pause();
-                    }
-                });
-
-                //}
-            }
-            $(document).on('scroll', checkMedia);
-        });
-</script>
 
 <script>
     
@@ -110,7 +56,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 <style type="text/css">
 
     body{
-    background-image: url(https://i.ibb.co/tbB8qFg/background.png);
+    background-image: url(https://ibb.co/n18BWYd);
     background-size: repeat;
     width:100%;
     height:auto;
