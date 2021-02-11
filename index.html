@@ -5,6 +5,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&display=swap" rel="stylesheet">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript">
+      $(document).ready(function() {
+            // Get media - with autoplay disabled (audio or video)
+            var media = $('video').not("[autoplay='autoplay']");
+            var tolerancePixel = 40;
+
+            function checkMedia(){
+                // Get current browser top and bottom
+                var scrollTop = $(window).scrollTop() + tolerancePixel;
+                var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
+
+                media.each(function(index, el) {
+                    var yTopMedia = $(this).offset().top;
+                    var yBottomMedia = $(this).height() + yTopMedia;
+
+                    if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
+                        $(this).get(0).play();
+                    } else {
+                        $(this).get(0).pause();
+                    }
+                });
+
+                //}
+            }
+            $(document).on('scroll', checkMedia);
+        });
+</script>
+<script type="text/javascript">
         $(document).ready(function() {
             // Get media - with autoplay disabled (audio or video)
             var media = $('video').not("[autoplay='autoplay']");
@@ -84,7 +111,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     background-image: url(https://i.ibb.co/tbB8qFg/background.png);
     background-size: repeat;
     width:100%;
-    height:11000px;
+    height:auto;
     font-family: 'Montserrat', sans-serif;
     color:#01666e;
     }
@@ -93,6 +120,9 @@ document.addEventListener('DOMContentLoaded',function(event){
     border:0px; 
     } 
 
+    a{
+      color:#01666e;
+    }
     h1{
     font-weight: 800px;
     font-size:4vw;
@@ -196,6 +226,12 @@ document.addEventListener('DOMContentLoaded',function(event){
     width:100%;
     }
 
+    #block_7{
+    position: absolute;
+    top:7300px;
+    width:100%;
+    }
+
     @keyframes caret {
     50% {
         border-color: transparent;
@@ -239,17 +275,18 @@ document.addEventListener('DOMContentLoaded',function(event){
         <h1>I Make<br>Websites.</h1>
         <p>
             <ul>
-            <li>8Twelve</li>
-            <li>Incrium</li>
-            <li>Doggo Sense</li>
+            <li><a href="8twelve.mortgage">8Twelve</a></li>
+            <li><a href="http://incrium.com">Incrium</a></li>
+            <li><a href="http://doggosense.com">Doggo Sense</a></li>
             
             </ul>
         </p>
-        <div style="position:absolute;top:420px;" >
-          <img src="https://i.ibb.co/zFvzS3K/phone.png" width="80%" style="position:absolute;">
-          <div style="width:80%; z-index:999;border-radius: 40px;margin-top:38px;" >
-            <iframe src="https://player.vimeo.com/video/511039550" width="640" height="1116" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-              
+        <div style="position:absolute;top:430px;" >
+          <img src="https://i.ibb.co/hVw8d3w/phone.png" width="60%" style="margin-left:-33px;position:absolute;">
+          <div style="z-index:999999999;">
+          <video width="50%" style="border-radius: 40px;margin-top:40px;"  controls autoplay>
+              <source src="http://drive.google.com/uc?export=view&id=1pPz7au43WFSDvXyWLm0pkWE7KqZPH3zd" type="video/mp4" style="position:absolute;">
+              </video>
           </div>
   
         </div>
@@ -292,7 +329,7 @@ document.addEventListener('DOMContentLoaded',function(event){
   <div class="left_even" style="margin-top:350px;">
     <h1>I make <br>Games.</h1>
     <p>
-        Frog Gogh(2016)
+       <li>Frog Gogh  (2016)</li> 
     </p>    
   </div>
   <div class="right_even">
@@ -326,9 +363,28 @@ document.addEventListener('DOMContentLoaded',function(event){
 
 <div id="block_6">   
   <center>
+    <div class="animate__animated animate__fadedown">
     <img src="https://i.ibb.co/dD6s4wm/citi.png" width="70%">
+    </div>
   </center>
+
 </div>
+
+<div id="block_7" style="color:#fff; font-size: 20px;">   
+
+  <img src="https://i.ibb.co/mX3GkjQ/Footer.png" width="100%" style="margin-left: -9px; position:absolute;">
+  <div style="width:30%;margin-left: 20%;position:absolute;margin-top:200px;">
+    <span style="font-size:40px;font-weight: 600;">Contact Information</span><br>
+    Angelica Mae T. Belo<br>
+    Atbelo@up.edu.ph<br>
+    +639776853492<br>
+    UP Diliman Electrical and Electronics Engineering Institute<br>
+  </div>
+  <div class="vl"></div>
+  <div style="width:30%;margin-left: 60%;position:absolute;margin-top:230px;">
+    All images, illustrations, media, and coding <br>are created and owned by Angelica Belo.<br>
+    © 2021
+  </div>
 </body>
 
 
@@ -341,6 +397,13 @@ document.addEventListener('DOMContentLoaded',function(event){
 
 <style type="text/css">
 
+.vl {
+  border-left: 6px solid #fff;
+  position:absolute;
+  height: 200px;
+  width:30%;margin-left: 50%;
+  margin-top:180px;
+}
   
     /*
     a n i m a t i o ns
