@@ -1,42 +1,36 @@
 <html>
  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&display=swap" rel="stylesheet">
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/scripts.js"></script>
+   
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript">
-var videos = document.getElementsByTagName("video"),
-fraction = 0.8;
-function checkScroll() {
+        $(document).ready(function() {
+            // Get media - with autoplay disabled (audio or video)
+            var media = $('video').not("[autoplay='autoplay']");
+            var tolerancePixel = 40;
 
-    for(var i = 0; i < videos.length; i++) {
+            function checkMedia(){
+                // Get current browser top and bottom
+                var scrollTop = $(window).scrollTop() + tolerancePixel;
+                var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
 
-        var video = videos[i];
+                media.each(function(index, el) {
+                    var yTopMedia = $(this).offset().top;
+                    var yBottomMedia = $(this).height() + yTopMedia;
 
-        var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
-            b = y + h, //bottom
-            visibleX, visibleY, visible;
+                    if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
+                        $(this).get(0).play();
+                    } else {
+                        $(this).get(0).pause();
+                    }
+                });
 
-            visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
-            visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
-
-            visible = visibleX * visibleY / (w * h);
-
-            if (visible > fraction) {
-                video.play();
-            } else {
-                video.pause();
+                //}
             }
-
-    }
-
-}
-
-window.addEventListener('scroll', checkScroll, false);
-window.addEventListener('resize', checkScroll, false);
+            $(document).on('scroll', checkMedia);
+        });
 </script>
 <script type="text/javascript">
   jQuery(document).ready(function(){ 
@@ -68,6 +62,52 @@ window.addEventListener('resize', checkScroll, false);
   });
 </script>
 
+<script>
+    
+document.addEventListener('DOMContentLoaded',function(event){
+  // array with texts to type in typewriter
+
+  var dataText = ["I'm Bels!", "I'm a Computer Engineering Student.", "I'm a developer and digital illustrator.",];
+  
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < (text.length)) {
+      // add next character to h1
+     document.querySelector("h2").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 50);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 700);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 20000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+     typeWriter(dataText[i], 0, function(){
+       // after callback (and whole text has been animated), start next text
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+</script>
 <style type="text/css">
 
     body{
@@ -191,56 +231,9 @@ window.addEventListener('resize', checkScroll, false);
  </style>
  </head>
  <script type="text/javascript">
-var video = document.getElementById('video'),
-    info = document.getElementById('info'),
-    fraction = 0.8;
 
-function checkScroll() {
-  var x = video.offsetLeft,
-      y = video.offsetTop,
-      w = video.offsetWidth,
-      h = video.offsetHeight,
-      r = x + w, //right
-      b = y + h, //bottom
-      visibleX,
-      visibleY,
-      visible;
-
-  if (window.pageXOffset >= r ||
-      window.pageYOffset >= b ||
-      window.pageXOffset + window.innerWidth < x ||
-      window.pageYOffset + window.innerHeight < y
-     ) {    
-
-    info.innerHTML = '0%';
-    return;
-  }
-
-  visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
-  visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
-
-  visible = visibleX * visibleY / (w * h);
-
-  info.innerHTML = Math.round(visible * 100) + '%';
-
-  if (visible > fraction) {
-    video.play();
-  } else {
-    video.pause();
-  }
-
-}
-
-window.addEventListener('scroll', checkScroll, false);
-window.addEventListener('resize', checkScroll, false);
-
-//one time at the beginning, in case it starts in view
-checkScroll();
-
-//as soon as we know the video dimensions
-video.addEventListener('loadedmetadata', checkScroll, false);
 </script>
-<body>
+ <body>
 
  <div id="block_1">   
     <center>
