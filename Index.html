@@ -1,0 +1,430 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,800;1,400&display=swap" rel="stylesheet">
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<script type="text/javascript">
+var videos = document.getElementsByTagName("video"),
+fraction = 0.8;
+function checkScroll() {
+
+    for(var i = 0; i < videos.length; i++) {
+
+        var video = videos[i];
+
+        var x = video.offsetLeft, y = video.offsetTop, w = video.offsetWidth, h = video.offsetHeight, r = x + w, //right
+            b = y + h, //bottom
+            visibleX, visibleY, visible;
+
+            visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+            visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+
+            visible = visibleX * visibleY / (w * h);
+
+            if (visible > fraction) {
+                video.play();
+            } else {
+                video.pause();
+            }
+
+    }
+
+}
+
+window.addEventListener('scroll', checkScroll, false);
+window.addEventListener('resize', checkScroll, false);
+</script>
+<script type="text/javascript">
+  jQuery(document).ready(function(){ 
+
+      // Get media - with autoplay disabled (audio or video)
+      var media = jQuery('video').not("[autoplay='autoplay']");
+      var tolerancePixel = 40;
+
+      function checkMedia(){
+          // Get current browser top and bottom
+          var scrollTop = jQuery(window).scrollTop() + tolerancePixel;
+          var scrollBottom = jQuery(window).scrollTop() + jQuery(window).height() - tolerancePixel;
+
+          media.each(function(index, el) {
+              var yTopMedia = jQuery(this).offset().top;
+              var yBottomMedia = jQuery(this).height() + yTopMedia;
+
+              if(scrollTop < yBottomMedia && scrollBottom > yTopMedia){ //view explaination in `In brief` section above
+                  jQuery(this).get(0).play();
+              } else {
+                  jQuery(this).get(0).pause();
+              }
+          });
+
+          //}
+      }
+      jQuery(document).on('scroll', checkMedia);
+  
+  });
+</script>
+
+<style type="text/css">
+
+    body{
+    background-image: url(background.png);
+    background-size: repeat;
+    width:100%;
+    height:11000px;
+    font-family: 'Montserrat', sans-serif;
+    color:#01666e;
+    }
+
+    h1{
+    font-weight: 800px;
+    font-size:4vw;
+    color:#01666e;
+    }
+
+    h2{
+    font-weight: 600;
+    font-size:1.7vw;
+    color:#1DA4AE;
+    animation: caret 1s steps(1) infinite;
+    }
+    p{
+    font-size:1.7vw;
+    color:#01666e;
+    }
+
+    ul{
+    margin-left:-5px;
+    margin-top:-20px;
+    }
+
+    li{
+    font-size:1.5vw;
+    color:#01666e;
+    text-align: left;
+    }
+
+    .left_even{
+    position: absolute;
+    left:10%;
+    width:40%;
+    }
+
+    .right_even{
+    position: absolute;
+    left:45%;
+    width:45%;
+    }
+
+    .left_odd{
+    position: absolute;
+    left:0%;
+    width:40%;
+    }
+
+    .right_odd{
+    position: absolute;
+    text-align: right;
+    left:40%;
+    width:50%;
+    }
+
+    #block_1{
+    position: absolute;
+    top:30%;
+    }
+
+
+    #block_1b{
+    position: relative;
+    top:1200px;
+    width:100%;
+    }
+
+
+    #block_2{
+    position: absolute;
+    top:1700px;
+    width:100%;
+    }
+
+
+    #block_2b{
+    position: absolute;
+    top:3000px;
+    width:100%;
+    }
+
+    #block_3{
+    position: absolute;
+    top:3000px;
+    width:100%;
+    }
+
+    #block_4{
+    position: absolute;
+    top:4000px;
+    width:100%;
+    }
+
+    #block_5{
+    position: absolute;
+    top:5200px;
+    width:100%;
+    }
+
+    #block_6{
+    position: absolute;
+    top:6200px;
+    width:100%;
+    }
+
+    @keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+    }
+
+ </style>
+ </head>
+ <script type="text/javascript">
+var video = document.getElementById('video'),
+    info = document.getElementById('info'),
+    fraction = 0.8;
+
+function checkScroll() {
+  var x = video.offsetLeft,
+      y = video.offsetTop,
+      w = video.offsetWidth,
+      h = video.offsetHeight,
+      r = x + w, //right
+      b = y + h, //bottom
+      visibleX,
+      visibleY,
+      visible;
+
+  if (window.pageXOffset >= r ||
+      window.pageYOffset >= b ||
+      window.pageXOffset + window.innerWidth < x ||
+      window.pageYOffset + window.innerHeight < y
+     ) {    
+
+    info.innerHTML = '0%';
+    return;
+  }
+
+  visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+  visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+
+  visible = visibleX * visibleY / (w * h);
+
+  info.innerHTML = Math.round(visible * 100) + '%';
+
+  if (visible > fraction) {
+    video.play();
+  } else {
+    video.pause();
+  }
+
+}
+
+window.addEventListener('scroll', checkScroll, false);
+window.addEventListener('resize', checkScroll, false);
+
+//one time at the beginning, in case it starts in view
+checkScroll();
+
+//as soon as we know the video dimensions
+video.addEventListener('loadedmetadata', checkScroll, false);
+</script>
+<body>
+
+ <div id="block_1">   
+    <center>
+    <img src="Landing_image.png" width="50%" class="animate__animated animate__fadein">
+    <img src="Landing_text.png" width="50%" style="margin-top:-40%" class="animate__animated animate__rotatein">
+    </center>
+    <div class="animate__animated animate__fadeindown" style="margin-top:-140px;">
+    <center>
+        <h2>Hi!</h2>
+    </center>
+    </div>
+</div>
+
+<div id="block_1b"> 
+  <div class="left_even" style="width:35%; margin-left:20%; line-height: 50px;">
+  <img src="icon.png" width=200>
+</div>
+  <div class="right_even" style="line-height: 50px;margin-top:20px;font-size:50px; font-weight: 600;">
+    Angelica Belo</div>
+    <div class="right_even" style="width:29%; margin-top: 80px;line-height: 40px;">
+    <left>A 4th year BS Computer Engineering Student from the University of the Philippines Diliman with experience in Web, Mobile, and Application development.</left>
+  </div>
+</div>
+
+</div>
+
+<div id="block_2">   
+    <div class="left_even"> 
+        <h1>I Make<br>Websites.</h1>
+        <p>
+            <ul>
+            <li>8Twelve</li>
+            <li>Incrium</li>
+            <li>Doggo Sense</li>
+            
+            </ul>
+        </p>
+        <div style="position:absolute;top:420px;" >
+          <img src="Phone.png" width="50%" style="position:absolute;">
+          <div style="z-index:999999999;">
+          <video width="50%" style="border-radius: 40px;margin-top:38px;" autoplay>
+              <source src="8T.mp4" type="video/mp4" style="position:absolute;">
+              </video>
+          </div>
+  
+        </div>
+    </div>
+    <div class="right_even">
+       <div style="position:absolute; z-index:111;">
+        <img src="Browser.png" width="100%">
+      </div>
+        <div style="position:absolute; z-index:11; top:5px;">
+        <img src="Incrium.png" width="100%" style="border-radius: 15px;">
+        </div>
+    </div>
+    <div class="right_even" style="margin-top: 600px;">
+      <div style="position:absolute; z-index:111;">
+       <img src="Browser.png" width="100%">
+     </div>
+       <div style="position:absolute; z-index:11; top:25px;">
+       <img src="Doggo Sense.png" width="100%" style="border-radius: 15px;">
+       </div>
+   </div>
+</div>
+
+
+<div id="block_3">   
+    <div class="left_odd">
+        <div id="object"><img src="Paper.png"  style="position: absolute;margin-top:30%;" class="animate__animated animate__fadeindown" width="80%"></div>  
+        <img src="Programming.png" style="margin-top:100px; margin-left: -10px;"  width="100%">
+    </div>
+    <div class="right_odd" style="margin-top:15%;">
+        <h1>I'm a<br>Programmer.</h1>
+        <p>
+            Proficient in HTML, CSS, C, C++, Elementor<br>
+            Knowledge in Javascript, AppleScript 
+        </p>    
+    </div>
+</div>
+
+
+<div id="block_4">   
+  <div class="left_even" style="margin-top:350px;">
+    <h1>I make <br>Games.</h1>
+    <p>
+        Frog Gogh(2016)
+    </p>    
+  </div>
+  <div class="right_even">
+    <img src="frog.png" style="width:100%;position:absolute;z-index:999;">
+    <img src="frog.gif" style="width:60%;position:absolute;margin-left:39.8%;10px;margin-top:20px;border-radius:7px;">
+    <img src="wavey.png" style="width:90%;margin-left:32%">
+  </div>
+</div>
+
+<div id="block_5">   
+  <div class="left_odd" style="margin-left:-10px;">
+    <img src="Mountain.png" style="width:100%;position:absolute;z-index:999;">
+  </div>
+  <div class="right_odd" style="margin-top:220px;">
+    <h1>I am a<br>Hardworker.</h1>
+    <div style="margin-left:40%; width: 70%;">
+    <p>
+      <ul>
+      <li>A working student and a freelancer
+      <li>A C & C++ tutor
+        <li>A Digital Artist/Illustrator
+        <li>A UI Designer for Happy Hay Co. UK
+        <li>A UI Designer and Developer for<br>Level Three Co. Canada
+        <li>A Developer for 8Twelve Canada
+        <li>A Developer for Doggo Sense
+      </ul>
+  </p>
+</div>
+  </div>
+</div>
+
+<div id="block_6">   
+  <center>
+    <img src="Citi.png" width="70%">
+  </center>
+</div>
+</body>
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+  
+    /*
+    a n i m a t i o ns
+    */
+
+    :root {
+     --animate-duration: 1s;
+    }
+    .animate__animated.animate__fadein {
+    --animate-duration: 3s;
+    }
+
+    .animate__animated.animate__rotatein {
+    --animate-duration: 1.5s;
+    }
+
+
+@-webkit-keyframes rotateIn {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+
+ </style>
+ </html>
