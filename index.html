@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     width: 100%;
     }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 600px) {
     h1{
     font-weight: 800px;
     font-size:6vw;
@@ -162,7 +162,155 @@ document.addEventListener('DOMContentLoaded',function(event){
     .block-7 {width: 100%; top:7300px;}
     }
 
-    @media only screen and (min-width: 1024px) {
+
+
+    @media only screen and (min-width: 600px) and (max-width: 1340px) {
+    /* For tablet: */
+    h1{
+    font-weight: 800px;
+    font-size:60px;
+    color:#01666e;
+    }
+
+    h2{
+    font-weight: 600;
+    color:#1DA4AE;
+    animation: caret 1s steps(1) infinite;
+    }
+    p{
+    font-size:26px;
+    color:#01666e;
+    }
+
+    ul{
+    margin-left:-5px;
+    margin-top:-20px;
+    }
+
+    li{
+    font-size:26px;
+    color:#01666e;
+    text-align: left;
+    }
+
+    .left_even{
+    position: absolute;
+    left:10%;
+    width:40%;
+    }
+
+    .right_even{
+    position: absolute;
+    left:45%;
+    width:45%;
+    }
+
+    .left_odd{
+    position: absolute;
+    left:0%;
+    width:40%;
+    }
+
+    .right_odd{
+    position: absolute;
+    text-align: right;
+    left:40%;
+    width:50%;
+    }
+
+
+    .vl {
+    border-left: 6px solid #fff;
+    position:absolute;
+    height: 110%;
+    width:30%;margin-left: 50%;
+    margin-top:10%;
+    }
+    
+    .block-1 {width: 100%; top:40%;}
+        #landp img{position: absolute; width: 700px; margin-left:-350px;}
+        #landp {margin-top:-110px;}
+        h2{margin-top:480px; font-size:27px;}
+        
+    .block-1b {top:110%;font-size:20px;line-height: 40px;}
+        #intro{margin-left:-5%;line-height: 50px;margin-top:-70px;font-size:50px; font-weight: 600;}
+        #introb{margin-left:-5%;width:40%;}
+        .block-1b img {width:200px; margin-left:30%; margin-top: -80px;}
+
+    .block-2 {width: 100%; top:150%;}
+        #phone img{width:300px;margin-left:-28px;position:absolute;}
+        #vid_{width:245px;border-radius: 30px;margin-top:38px;}
+        #screens img{width:600px;border-radius: 12px;}
+
+    .block-3 {width: 100%; top:280%;}
+    .block-4 {width: 100%; top:390%;}
+        #games{margin-top:20%;}
+        #frog{width:60%;position:absolute;margin-left:39.8%;margin-top:2.5%;border-radius:7px;}
+    
+    .block-5 {width: 100%; top:520%;}
+    .block-6 {width: 100%; top:630%;}
+    .block-7 {width: 100%; top:700%;}
+    }
+
+
+
+
+    .block-1{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-1b{
+    position: relative;
+    width:100%;
+    }
+
+
+    .block-2{
+    position: absolute;
+    width:100%;
+    }
+
+
+    .block-2b{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-3{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-4{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-5{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-6{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-7{
+    position: relative;
+    width:100%;
+    }
+
+    @keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+    }
+
+
+
+    @media only screen and (min-width: 1340px) {
     /* For desktop: */
     h1{
     font-weight: 800px;
@@ -237,8 +385,8 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     .block-2 {width: 100%; top:150%;}
         #phone img{width:400px;margin-left:-33px;position:absolute;}
-        #vid_{width:333px;}
-        #screens img{width:750px;}
+        #vid_{width:333px;border-radius: 40px;margin-top:40px;}
+        #screens img{width:750px;border-radius: 15px;}
 
     .block-3 {width: 100%; top:280%;}
     .block-4 {width: 100%; top:390%;}
@@ -355,7 +503,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         <div style="position:absolute;top:430px;" id="phone" >
           <img src="https://tinypng.com/web/output/1khxfyvphu9p7679qj5ftqv9h74vywuf/phone.png">
           <div style="z-index:999999999;" >
-          <video id="vid_" style="border-radius: 40px;margin-top:40px;"  controls autoplay>
+          <video id="vid_" controls autoplay>
               <source src="https://drive.google.com/uc?export=view&id=1pPz7au43WFSDvXyWLm0pkWE7KqZPH3zd" type="video/mp4" style="position:absolute;">
               </video>
           </div>
@@ -367,7 +515,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         <img src="https://tinypng.com/web/output/8uxake704ttzwpg8685v1c312qegxd6j/Browser.png" >
       </div>
         <div style="position:absolute; z-index:11; top:5px;">
-        <img src="https://tinypng.com/web/output/h3t9af4gebyj2x4z61jnw4cr3y0k6mkc/Incrium.png"  style="border-radius: 15px;">
+        <img src="https://tinypng.com/web/output/h3t9af4gebyj2x4z61jnw4cr3y0k6mkc/Incrium.png"  >
         </div>
     </div>
     <div class="right_even" id="screens" style="margin-top: 600px;">
@@ -375,7 +523,7 @@ document.addEventListener('DOMContentLoaded',function(event){
        <img src="https://tinypng.com/web/output/8uxake704ttzwpg8685v1c312qegxd6j/Browser.png">
      </div>
        <div style="position:absolute; z-index:11; margin-top: 30px;" id="screens">
-       <img src="https://tinypng.com/web/output/4kna2137hufv5kqxqucz0jdqytwgfrty/Doggo%20Sense.png" width="100%" style="border-radius: 15px;">
+       <img src="https://tinypng.com/web/output/4kna2137hufv5kqxqucz0jdqytwgfrty/Doggo%20Sense.png" >
        </div>
    </div>
 </div>
