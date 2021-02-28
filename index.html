@@ -8,7 +8,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 
 
-
 <script>
 (function($){
   $(document).on('contextmenu', 'img', function() {
@@ -62,6 +61,7 @@ document.addEventListener('DOMContentLoaded',function(event){
   // start the text animation
   StartTextAnimation(0);
 });
+
 </script>
 <style type="text/css">
 
@@ -82,6 +82,83 @@ document.addEventListener('DOMContentLoaded',function(event){
     a{
       color:#01666e;
     }
+
+
+
+
+    /* For mobile phones: */
+    [class*="block-"] {
+    width: 100%;
+    }
+
+    @media only screen and (max-width: 768px) {
+    h1{
+    font-weight: 800px;
+    font-size:6vw;
+    color:#01666e;
+    }
+
+    p{
+    font-size:2.5vw;
+    color:#01666e;
+    }
+
+    ul{
+    margin-left:-5px;
+    margin-top:-20px;
+    }
+
+    li{
+    font-size:2.5vw;
+    color:#01666e;
+    text-align: left;
+    }
+
+
+    
+    .left_even{
+    position: absolute;
+
+    }
+
+    .right_even{
+    position: absolute;
+
+    }
+
+    .left_odd{
+    position: absolute;
+
+    }
+
+    .right_odd{
+    position: absolute;
+    text-align: right;
+    }
+
+
+    .block-1 {width: 100%; top:30%;}
+        .block-1 img{width: 90%;}
+        #Landing-text{margin-top:-80%;}
+        h2{margin-top:-10px; font-size:3vw;}
+
+    .block-1b {width: 100%; top:80%; line-height: 30px; margin-top:20px; font-size:15px;}
+        #intro{line-height: 30px;margin-top:-40px;font-size:30px; font-weight: 600;} 
+        .block-1b img {width:60%;margin-left:20px;}
+        #left{position: absolute; left:10%; width:40%;}
+        #right{position: absolute; left:50%; width:40%;}
+
+    .block-2 {width: 100%; top:110%;}
+    .block-2b {width: 100%; top:3000px;}
+    .block-3 {width: 100%; top:3000px;}
+    .block-4 {width: 100%; top:4000px;}
+    .block-5 {width: 100%; top:5200px;}
+    .block-6 {width: 100%; top:6200px;}
+    .block-7 {width: 100%; top:7300px;}
+    }
+
+    @media only screen and (min-width: 768px) {
+    /* For desktop: */
     h1{
     font-weight: 800px;
     font-size:4vw;
@@ -90,7 +167,6 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     h2{
     font-weight: 600;
-    font-size:1.7vw;
     color:#1DA4AE;
     animation: caret 1s steps(1) infinite;
     }
@@ -112,8 +188,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
     .left_even{
     position: absolute;
-    left:10%;
-    width:40%;
+
     }
 
     .right_even{
@@ -135,59 +210,72 @@ document.addEventListener('DOMContentLoaded',function(event){
     width:50%;
     }
 
-    #block_1{
-    position: absolute;
-    top:30%;
+    .block-1 {width: 100%; top:30%;}
+        .block-1 img{width: 50%}
+        #Landing-text{margin-top:-40%;}
+        h2{margin-top:-100px; font-size:1.7vw;}
+        
+    .block-1b {top:1200px;font-size:20px;line-height: 40px;}
+        #intro{line-height: 50px;margin-top:-70px;font-size:50px; font-weight: 600;}
+        #introb{width:600px;}
+        .block-1b img {width:35%; margin-left:45%; margin-top: -80px;}
+
+    .block-2 {width: 100%; top:1700px;}
+    .block-2b {width: 100%; top:3000px;}
+    .block-3 {width: 100%; top:3000px;}
+    .block-4 {width: 100%; top:4000px;}
+    .block-5 {width: 100%; top:5200px;}
+    .block-6 {width: 100%; top:6200px;}
+    .block-7 {width: 100%; top:7300px;}
     }
 
 
-    #block_1b{
+
+
+    .block-1{
+    position: absolute;
+    width:100%;
+    }
+
+    .block-1b{
     position: relative;
-    top:1200px;
     width:100%;
     }
 
 
-    #block_2{
+    .block-2{
     position: absolute;
-    top:1700px;
     width:100%;
     }
 
 
-    #block_2b{
+    .block-2b{
     position: absolute;
-    top:3000px;
     width:100%;
     }
 
-    #block_3{
+    .block-3{
     position: absolute;
-    top:3000px;
     width:100%;
     }
 
-    #block_4{
+    .block-4{
     position: absolute;
-    top:4000px;
     width:100%;
     }
 
-    #block_5{
+    .block-5{
     position: absolute;
-    top:5200px;
     width:100%;
     }
 
-    #block_6{
+    .block-6{
     position: absolute;
-    top:6200px;
     width:100%;
     }
 
-    #block_7{
+    .block-7{
     position: absolute;
-    top:7300px;
     width:100%;
     }
 
@@ -206,32 +294,34 @@ document.addEventListener('DOMContentLoaded',function(event){
   </script>
 <body style="display: none;">
 
- <div id="block_1">   
+ <div class="block-1">   
     <center>
-    <img src="https://i.ibb.co/NFy93dh/Landing-image.png" width="50%" class="animate__animated animate__fadein">
-    <img src="https://i.ibb.co/1nnbnKn/Landing-text.png" width="50%" style="margin-top:-40%" class="animate__animated animate__rotatein">
+    <img src="https://i.ibb.co/NFy93dh/Landing-image.png" class="animate__animated animate__fadein">
+    <img src="https://i.ibb.co/1nnbnKn/Landing-text.png" id="Landing-text" class="animate__animated animate__rotatein">
     </center>
-    <div class="animate__animated animate__fadeindown" style="margin-top:-140px;">
+    <div class="animate__animated animate__fadeindown" >
     <center>
         <h2>Hi!</h2>
     </center>
     </div>
 </div>
 
-<div id="block_1b"> 
-  <div class="left_even" style="width:35%; margin-left:20%; line-height: 50px;">
-  <img src="https://i.ibb.co/BfF38Kx/Icon.png" width=200>
+<div class="block-1b"> 
+  <div class="left_even" id="left">
+  <img src="https://i.ibb.co/BfF38Kx/Icon.png">
 </div>
-  <div class="right_even" style="line-height: 50px;margin-top:20px;font-size:50px; font-weight: 600;">
+<div id="right">
+  <div class="right_even" id="intro">
     Angelica Belo</div>
-    <div class="right_even" style="width:29%; margin-top: 80px;line-height: 40px;">
+    <div class="right_even" id="introb">
     <left>A 4th year BS Computer Engineering Student from the University of the Philippines Diliman with experience in Web, Mobile, and Application development.</left>
   </div>
 </div>
+</div>
 
 </div>
 
-<div id="block_2">   
+<div class="block-2">   
     <div class="left_even"> 
         <h1>I Make<br>Websites.</h1>
         <p>
@@ -271,7 +361,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 </div>
 
 
-<div id="block_3">   
+<div class="block-3">   
     <div class="left_odd">
         <div id="object"><img src="https://tinypng.com/web/output/c585h9d4umb3tc0yj8rhcpzq7zbnjb15/Paper.png"  style="position: absolute;margin-top:30%;" class="animate__animated animate__fadeindown" width="80%"></div>  
         <img src="https://tinypng.com/web/output/jpdjnhfcymbwje83br5xgrve9676hway/Programming.png" style="margin-top:100px; margin-left: -10px;"  width="100%">
@@ -286,7 +376,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 </div>
 
 
-<div id="block_4">   
+<div class="block-4">   
   <div class="left_even" style="margin-top:350px;">
     <h1>I make <br>Games.</h1>
     <p>
@@ -300,7 +390,7 @@ document.addEventListener('DOMContentLoaded',function(event){
   </div>
 </div>
 
-<div id="block_5">   
+<div class="block-5">   
   <div class="left_odd" style="margin-left:-10px;">
     <img src="https://tinypng.com/web/output/0xuxa9vukpgfnzx5t5mnme5vnf24hwnv/Mountain.png" style="width:100%;position:absolute;z-index:999;">
   </div>
@@ -322,7 +412,7 @@ document.addEventListener('DOMContentLoaded',function(event){
   </div>
 </div>
 
-<div id="block_6">   
+<div class="block-6">   
   <center>
     <div class="animate__animated animate__fadedown">
     <img src="https://tinypng.com/web/output/j76yc7kqc634dax90mg93j7hpyf6mhd9/Citi2.png" width="70%">
@@ -331,7 +421,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
 </div>
 
-<div id="block_7" style="color:#fff; font-size: 20px;">   
+<div class="block-7" style="color:#fff; font-size: 20px;">   
 
   <img src="https://tinypng.com/web/output/916ffha15fmmndvm224x2417qqkde32w/Footer2.png" width="100%" style="margin-left: -9px; position:absolute;">
   <div style="width:30%;margin-left: 20%;position:absolute;margin-top:200px;">
