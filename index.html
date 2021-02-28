@@ -149,9 +149,14 @@ document.addEventListener('DOMContentLoaded',function(event){
         #right{position: absolute; left:50%; width:40%;}
 
     .block-2 {width: 100%; top:110%;}
+        #phone img{width: 400px;margin-left:-33px;position:absolute;}
+        #vid_{width:333px;}
+        #screens img{width:500px;}
     .block-2b {width: 100%; top:3000px;}
     .block-3 {width: 100%; top:3000px;}
     .block-4 {width: 100%; top:4000px;}
+    #games{margin-top:20%;}
+        #frog{width:60%;position:absolute;margin-left:39.8%;margin-top:2.5%;border-radius:7px;}
     .block-5 {width: 100%; top:5200px;}
     .block-6 {width: 100%; top:6200px;}
     .block-7 {width: 100%; top:7300px;}
@@ -161,7 +166,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     /* For desktop: */
     h1{
     font-weight: 800px;
-    font-size:4vw;
+    font-size:60px;
     color:#01666e;
     }
 
@@ -171,7 +176,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     animation: caret 1s steps(1) infinite;
     }
     p{
-    font-size:1.7vw;
+    font-size:26px;
     color:#01666e;
     }
 
@@ -181,7 +186,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     }
 
     li{
-    font-size:1.5vw;
+    font-size:26px;
     color:#01666e;
     text-align: left;
     }
@@ -211,23 +216,37 @@ document.addEventListener('DOMContentLoaded',function(event){
     width:50%;
     }
 
-    .block-1 {width: 100%; top:30%;}
-        .block-1 img{width: 50%}
-        #Landing-text{margin-top:-40%;}
-        h2{margin-top:-100px; font-size:1.7vw;}
-        
-    .block-1b {top:1200px;font-size:20px;line-height: 40px;}
-        #intro{line-height: 50px;margin-top:-70px;font-size:50px; font-weight: 600;}
-        #introb{width:600px;}
-        .block-1b img {width:35%; margin-left:45%; margin-top: -80px;}
 
-    .block-2 {width: 100%; top:1700px;}
-    .block-2b {width: 100%; top:3000px;}
-    .block-3 {width: 100%; top:3000px;}
-    .block-4 {width: 100%; top:4000px;}
-    .block-5 {width: 100%; top:5200px;}
-    .block-6 {width: 100%; top:6200px;}
-    .block-7 {width: 100%; top:7300px;}
+    .vl {
+    border-left: 6px solid #fff;
+    position:absolute;
+    height: 110%;
+    width:30%;margin-left: 50%;
+    margin-top:10%;
+    }
+    
+    .block-1 {width: 100%; top:40%;}
+        #landp img{position: absolute; width: 700px; margin-left:-350px;}
+        #landp {margin-top:-110px;}
+        h2{margin-top:480px; font-size:27px;}
+        
+    .block-1b {top:110%;font-size:20px;line-height: 40px;}
+        #intro{margin-left:-5%;line-height: 50px;margin-top:-70px;font-size:50px; font-weight: 600;}
+        #introb{margin-left:-5%;width:40%;}
+        .block-1b img {width:200px; margin-left:30%; margin-top: -80px;}
+
+    .block-2 {width: 100%; top:150%;}
+        #phone img{width:400px;margin-left:-33px;position:absolute;}
+        #vid_{width:333px;}
+        #screens img{width:750px;}
+
+    .block-3 {width: 100%; top:280%;}
+    .block-4 {width: 100%; top:390%;}
+        #games{margin-top:20%;}
+        #frog{width:60%;position:absolute;margin-left:39.8%;margin-top:2.5%;border-radius:7px;}
+    .block-5 {width: 100%; top:520%;}
+    .block-6 {width: 100%; top:630%;}
+    .block-7 {width: 100%; top:700%;}
     }
 
 
@@ -276,7 +295,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     }
 
     .block-7{
-    position: absolute;
+    position: relative;
     width:100%;
     }
 
@@ -295,10 +314,10 @@ document.addEventListener('DOMContentLoaded',function(event){
   </script>
 <body style="display: none;">
 
- <div class="block-1">   
+ <div class="block-1" id="landp">   
     <center>
-    <img src="https://i.ibb.co/NFy93dh/Landing-image.png" class="animate__animated animate__fadein">
-    <img src="https://i.ibb.co/1nnbnKn/Landing-text.png" id="Landing-text" class="animate__animated animate__rotatein">
+    <img src="https://i.ibb.co/NFy93dh/Landing-image.png"class="animate__animated animate__fadein">
+    <img id="landp"src="https://i.ibb.co/1nnbnKn/Landing-text.png"class="animate__animated animate__rotatein">
     </center>
     <div class="animate__animated animate__fadeindown" >
     <center>
@@ -333,29 +352,29 @@ document.addEventListener('DOMContentLoaded',function(event){
             
             </ul>
         </p>
-        <div style="position:absolute;top:430px;" >
-          <img src="https://tinypng.com/web/output/1khxfyvphu9p7679qj5ftqv9h74vywuf/phone.png" width="60%" style="margin-left:-33px;position:absolute;">
-          <div style="z-index:999999999;">
-          <video width="50%" style="border-radius: 40px;margin-top:40px;"  controls autoplay>
+        <div style="position:absolute;top:430px;" id="phone" >
+          <img src="https://tinypng.com/web/output/1khxfyvphu9p7679qj5ftqv9h74vywuf/phone.png">
+          <div style="z-index:999999999;" >
+          <video id="vid_" style="border-radius: 40px;margin-top:40px;"  controls autoplay>
               <source src="https://drive.google.com/uc?export=view&id=1pPz7au43WFSDvXyWLm0pkWE7KqZPH3zd" type="video/mp4" style="position:absolute;">
               </video>
           </div>
   
         </div>
     </div>
-    <div class="right_even">
+    <div class="right_even" id="screens">
        <div style="position:absolute; z-index:111;">
-        <img src="https://tinypng.com/web/output/8uxake704ttzwpg8685v1c312qegxd6j/Browser.png" width="100%">
+        <img src="https://tinypng.com/web/output/8uxake704ttzwpg8685v1c312qegxd6j/Browser.png" >
       </div>
         <div style="position:absolute; z-index:11; top:5px;">
-        <img src="https://tinypng.com/web/output/h3t9af4gebyj2x4z61jnw4cr3y0k6mkc/Incrium.png" width="100%" style="border-radius: 15px;">
+        <img src="https://tinypng.com/web/output/h3t9af4gebyj2x4z61jnw4cr3y0k6mkc/Incrium.png"  style="border-radius: 15px;">
         </div>
     </div>
-    <div class="right_even" style="margin-top: 600px;">
+    <div class="right_even" id="screens" style="margin-top: 600px;">
       <div style="position:absolute; z-index:111;">
-       <img src="https://tinypng.com/web/output/8uxake704ttzwpg8685v1c312qegxd6j/Browser.png" width="100%">
+       <img src="https://tinypng.com/web/output/8uxake704ttzwpg8685v1c312qegxd6j/Browser.png">
      </div>
-       <div style="position:absolute; z-index:11; top:25px;">
+       <div style="position:absolute; z-index:11; margin-top: 30px;" id="screens">
        <img src="https://tinypng.com/web/output/4kna2137hufv5kqxqucz0jdqytwgfrty/Doggo%20Sense.png" width="100%" style="border-radius: 15px;">
        </div>
    </div>
@@ -378,7 +397,7 @@ document.addEventListener('DOMContentLoaded',function(event){
 
 
 <div class="block-4">   
-  <div class="left_even" style="margin-top:350px;">
+  <div class="left_even" id="games">
     <h1>I make <br>Games.</h1>
     <p>
        <li>Frog Gogh  (2016)</li> 
@@ -386,7 +405,7 @@ document.addEventListener('DOMContentLoaded',function(event){
   </div>
   <div class="right_even">
     <img src="https://tinypng.com/web/output/vjqtaautkgzcxq1rzpy9ye57k56j8aex/frog.png" style="width:100%;position:absolute;z-index:999;">
-    <img src="https://i.ibb.co/zn3ByCL/frog.gif" style="width:60%;position:absolute;margin-left:39.8%;10px;margin-top:20px;border-radius:7px;">
+    <img src="https://i.ibb.co/zn3ByCL/frog.gif" id="frog">
     <img src="https://tinypng.com/web/output/r9j916p3qbkn65hp0t5pk7xqqgdfxj4z/Wavey.png" style="width:90%;margin-left:32%">
   </div>
 </div>
@@ -420,37 +439,30 @@ document.addEventListener('DOMContentLoaded',function(event){
     </div>
   </center>
 
+  <div class="block-7" style="color:#fff; font-size: 1.2vw;">   
+
+    <img src="https://tinypng.com/web/output/916ffha15fmmndvm224x2417qqkde32w/Footer2.png" width="100%" style="margin-left: -9px;">
+    <div style="width:30%;margin-left: 20%;position:relative;margin-top:-15%;">
+      <span style="font-size:2.5vw;font-weight: 600;">Contact Information</span><br>
+      Angelica Mae T. Belo<br>
+      Atbelo@up.edu.ph<br>
+      +639776853492<br>
+      UP Diliman Electrical and Electronics Engineering Institute<br>
+    </div>
+    <div class="vl" style="margin-top:-15%;"><br><br><br></div>
+    <div style="width:30%;margin-left: 60%;position:relative;margin-top:-10%;">
+      All images, illustrations, media, and coding <br>are created and owned by Angelica Belo.<br>
+      © 2021
+    </div>
 </div>
 
-<div class="block-7" style="color:#fff; font-size: 20px;">   
 
-  <img src="https://tinypng.com/web/output/916ffha15fmmndvm224x2417qqkde32w/Footer2.png" width="100%" style="margin-left: -9px; position:absolute;">
-  <div style="width:30%;margin-left: 20%;position:absolute;margin-top:200px;">
-    <span style="font-size:40px;font-weight: 600;">Contact Information</span><br>
-    Angelica Mae T. Belo<br>
-    Atbelo@up.edu.ph<br>
-    +639776853492<br>
-    UP Diliman Electrical and Electronics Engineering Institute<br>
-  </div>
-  <div class="vl"></div>
-  <div style="width:30%;margin-left: 60%;position:absolute;margin-top:230px;">
-    All images, illustrations, media, and coding <br>are created and owned by Angelica Belo.<br>
-    © 2021
-  </div>
 </body>
 
 
 
 <style type="text/css">
 
-.vl {
-  border-left: 6px solid #fff;
-  position:absolute;
-  height: 200px;
-  width:30%;margin-left: 50%;
-  margin-top:180px;
-}
-  
     /*
     a n i m a t i o ns
     */
